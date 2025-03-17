@@ -1,16 +1,16 @@
 
  // memory copy definition and implementation
 
- #include<stdio.h>
+#include<stdint.h>
+#include <sys/_types/_size_t.h>
 
- void memcpy(int *source, int *dest) {
+
+ void memcpy(void const *source, void *dest, size_t size) {
     
-    *dest = 0;
-    *dest = *source | *dest;
+    char *tempSource = (char*)source;
+    char *tempDestination = (char*) dest;
 
-    printf("the value at the source is: &d \n", *source);
-    printf("the value at the dest is: &d \n", *dest); 
-
+    for (int i=0; i<size; i++) 
+    tempDestination[i] = tempSource[i]; 
  } 
-
 

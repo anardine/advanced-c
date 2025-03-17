@@ -5,9 +5,12 @@
 int main() {
 
     int a = 10;
-    int *pToDest = malloc(sizeof(int));
+    int *pToDest = (int*)malloc(sizeof(int));
 
-    memcpy(&a, pToDest);
+    memcpy(&a, pToDest, sizeof(a));
+
+    free(pToDest);
     
     return 0;
 }
+
