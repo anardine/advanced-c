@@ -1,12 +1,15 @@
-#include <sys/_types/_size_t.h>
+
  // memory copy definition and implementation
 
+ #include<stdio.h>
 
- void memcpy(double *source, int *dest, size_t numBytes) {
+ void memcpy(int *source, int *dest) {
     
     *dest = 0;
-    *dest = (int)*source | *dest;
+    *dest = *source | *dest;
 
+    printf("the value at the source is: &d \n", *source);
+    printf("the value at the dest is: &d \n", *dest); 
 
  } 
 
